@@ -1,0 +1,54 @@
+<% include ./partials/header.ejs %>
+<style>
+    .image-container {
+        position: relative;
+        display: inline-block;
+    }
+
+    .image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+    }
+
+    .image-container:hover img {
+    transform: scale(1.1);
+    }
+
+    .image-slider {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        padding: 10px;
+        box-sizing: border-box;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .image-container:hover .image-slider {
+        opacity: 1;
+    }
+</style>
+<div class="w-full min-h-screen bg-red-100 text-zinc-800 px-10 py-8">
+    <div class="cards flex flex-wrap gap-7">
+        <% posts.forEach(function(elem){ %>
+            <div class="card w-[10vw]">
+                <div class="image-container w-auto h-auto rounded-xl bg-red-50 overflow-hidden">
+                    <a href="/images/uploads/<%= elem.image %>">
+                        <img class="object-cover" src="/images/uploads/<%= elem.image %>" alt="">
+                    </a>
+                    <div class="image-slider">
+                        <p><%= elem.description %></p>
+                    </div>
+                </div>
+                <h5 class="text-zinc-800 mt-2 text-md"><%= elem.title %></h5>
+                <h6 class="opacity-80 font-semibold text-xs"><%= elem.user.name %></h6>
+            </div>
+        <% }); %>
+    </div>
+</div>
+<% include ./partials/footer.ejs %>
