@@ -7,3 +7,5 @@ STEP 3: Open your MongoDB Compass GUI and connect it <br>
 STEP 4: To execute the code, write "npx nodemon" in your terminal <br>
 STEP 5: Open localhost:3000 on your web browser and the application should display there <br>
 STEP 6: Make the changes you want to in the code and Enjoy! <br>
+
+[gallOURy.pdf](https://github.com/user-attachments/files/15849181/gallOURy.pdf)
